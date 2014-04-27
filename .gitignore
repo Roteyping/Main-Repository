@@ -1,0 +1,8 @@
+.idea/
+**/*.iml
+.gradle
+*.iws
+*.ipr
+**/build/
+out/**
+**/tomcat/

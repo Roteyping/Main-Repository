@@ -1,0 +1,8 @@
+rootProject.name = 'roteyping'
+
+include 'service'
+
+include 'service'
+
+include 'common'
+

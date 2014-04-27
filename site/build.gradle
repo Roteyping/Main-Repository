@@ -1,0 +1,78 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    executableWarDeps
+}
+
+ext {
+    springVersion="3.2.2.RELEASE"
+    tomcatVersion = '7.0.52'
+    release = "${System.env.BUILD_VCS_NUMBER ?: 0}"
+}
+
+ext.compileLibraries = [ 'javax.servlet:javax.servlet-api:3.0.1',
+                         'org.springframework:spring-core:'+springVersion,
+                         'org.springframework:spring-web:'+springVersion,
+                         'org.springframework:spring-webmvc:'+springVersion,
+                         'org.springframework.ws:spring-ws-core:2.1.2.RELEASE',
+                         'org.codehaus.jackson:jackson-mapper-asl:1.9.12',
+                         'commons-httpclient:commons-httpclient:3.1',
+                         'com.google.guava:guava:14.0-rc1',
+                         'ch.qos.logback:logback-classic:1.0.13'
+]
+
+sourceSets{
+    //this is how Gradle handles provided dependencies....
+    main {compileClasspath += configurations.executableWarDeps
+        compileClasspath += configurations.runtime
+    }
+
+}
+
+dependencies {
+    compile compileLibraries
+
+    executableWarDeps 'com.beust:jcommander:1.7',
+            'org.apache.tomcat.embed:tomcat-embed-core:'+tomcatVersion,
+            'org.apache.tomcat.embed:tomcat-embed-logging-juli:'+tomcatVersion,
+            'org.apache.tomcat.embed:tomcat-embed-jasper:'+tomcatVersion
+
+    testCompile 'junit:junit:4.11',
+            'org.mockito:mockito-all:1.9.5'
+}
+
+idea{
+    module{
+        scopes.PROVIDED.plus += configurations.executableWarDeps
+        scopes.PROVIDED.plus += configurations.testCompile
+    }
+}
+
+war {
+    archiveName = "roteypingsite.war"
+    from {configurations.executableWarDeps.collect {
+        it.isDirectory() ? it : project.zipTree(it)
+    }
+    }
+    from fileTree(sourceSets.main.output.classesDir){
+        include("launch/**/*.class")
+    }
+
+    manifest { attributes('Main-Class': 'launch.Launcher') }
+}
+
+task run(dependsOn: [war], type: Exec) {
+    commandLine "java", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingsite.war", "-TomcatPort", "9080"
+}
+
+task runDebug(dependsOn: [war], type: Exec) {
+    commandLine "java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingsite.war", "-TomcatPort", "9080"
+}
