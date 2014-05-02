@@ -166,6 +166,13 @@ INSERT INTO roteyping.institutetype(InstituteType) VALUES('SCHOOL');
 INSERT INTO roteyping.institutetype(InstituteType) VALUES('COLLEGE');
 INSERT INTO roteyping.institutetype(InstituteType) VALUES('UNIVERSITY');
 
+DELIMITER $$
+CREATE PROCEDURE roteyping.`GET_USER`(UserID INT)
+BEGIN
+	SELECT * FROM users where UserID=UserID;
+END$$
+DELIMITER ;
+
 
 
 
