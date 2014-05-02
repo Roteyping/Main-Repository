@@ -1,0 +1,5 @@
+Step 1: Download and Install MYSQL FROM http://dev.mysql.com/downloads/mysql/
+Step 2: Download and Install WorkBench FROM http://dev.mysql.com/downloads/tools/workbench/
+Step 3: RUN The script from SqlScript File to create a database and tables
+
+TODO.. Need to add tables for score etc....
