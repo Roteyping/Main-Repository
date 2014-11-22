@@ -23,11 +23,11 @@ public class AuthenticationController {
     @RequestMapping(value="/authenticate", method = RequestMethod.POST, consumes = "application/json")
     public ResponseEntity<Boolean> authenticateRequest(@RequestBody AuthenticateRequest request) {
         if(Strings.isNullOrEmpty(request.getEmailAddress()) || Strings.isNullOrEmpty(request.getPassword())){
-            return new ResponseEntity<Boolean>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         if(authenticationRepository.exists(request.getEmailAddress(), request.getPassword())){
-            return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+            return new ResponseEntity<>(true, HttpStatus.OK);
         }
-        return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+        return new ResponseEntity<>(false, HttpStatus.OK);
     }
 }

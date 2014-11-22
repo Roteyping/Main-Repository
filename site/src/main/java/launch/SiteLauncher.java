@@ -5,17 +5,16 @@ import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.startup.Tomcat;
 
-
 import java.io.File;
 import java.net.URL;
 
 
-public class Launcher {
+public class SiteLauncher {
 
     public static void main(String[] args) throws Exception {
-        TomcatSettings settings = new TomcatSettings();
+        SiteTomcatSettings settings = new SiteTomcatSettings();
         new JCommander(settings, args);
-        URL war = Launcher.class.getProtectionDomain().getCodeSource().getLocation();
+        URL war = SiteLauncher.class.getProtectionDomain().getCodeSource().getLocation();
         Tomcat tomcat = new Tomcat();
         tomcat.setBaseDir(settings.getTomcatDir());
         Context context = tomcat.addWebapp("/", war.getPath());
@@ -36,7 +35,7 @@ public class Launcher {
 
         tomcat.setConnector(connector);
         tomcat.start();
-        System.err.println("<<<Completed Service Tomcat Startup>>>");
+        System.err.println("<<<Completed Site Tomcat Startup>>>");
         tomcat.getServer().await();
     }
 }

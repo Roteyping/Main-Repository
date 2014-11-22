@@ -6,3 +6,6 @@
 **/build/
 out/**
 **/tomcat/
+*.iml
+site/*.iml
+service/*.iml
