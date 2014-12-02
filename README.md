@@ -8,8 +8,8 @@ In Mac
 you can add following line to .profile file in your home directory
 
 JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-   export JAVA_HOME
-   PATH=$PATH:$JAVA_HOME/bin
+export JAVA_HOME
+PATH=$PATH:$JAVA_HOME/bin
    
 Then go to the project folder 
 Make sure gradlew is executable
