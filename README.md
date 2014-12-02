@@ -14,10 +14,9 @@ JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 Then go to the project folder 
 Make sure gradlew is executable
 
-run Make sure gradlew is executable   
 run chmod +x gradlew
 
-and
+and finally
 
 run ./gradlew. This should build the project.
 
