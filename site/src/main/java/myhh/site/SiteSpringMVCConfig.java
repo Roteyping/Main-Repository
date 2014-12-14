@@ -1,4 +1,4 @@
-package roteyping.site;
+package myhh.site;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +18,13 @@ import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
-import roteyping.site.config.SiteConfig;
+import myhh.site.config.SiteConfig;
 
 import static com.google.common.collect.Lists.newArrayList;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("roteyping.site")
+@ComponentScan("myhh.site")
 public class SiteSpringMVCConfig extends WebMvcConfigurerAdapter {
     @Autowired
     Environment environment;

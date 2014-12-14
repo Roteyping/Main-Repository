@@ -1,4 +1,4 @@
-package roteyping.service.repositories;
+package myhh.service.repositories;
 
 import java.util.Map;
 

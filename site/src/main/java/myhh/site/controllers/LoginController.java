@@ -1,4 +1,4 @@
-package roteyping.site.controllers;
+package myhh.site.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-import roteyping.site.config.SiteConfig;
-import roteyping.site.model.LoginRequest;
+import myhh.site.config.SiteConfig;
+import myhh.site.model.LoginRequest;
 
 @Controller
 public class LoginController {
@@ -32,13 +32,17 @@ public class LoginController {
         return new ModelAndView("login");
     }
 
-    @RequestMapping(value="/login", method = RequestMethod.POST, consumes = "application/json")
-    public ResponseEntity<Boolean> postForlogin(@RequestBody LoginRequest request) {
+    @RequestMapping(value="/login", method = RequestMethod.POST)
+    public ResponseEntity<Boolean> postForlogin(String email, String password) {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
+        LoginRequest request = new LoginRequest();
+        request.setEmail(email);
+        request.setPassword(password);
+
         HttpEntity<LoginRequest> requestHttpEntity = new HttpEntity<>(request, headers);
 
-        return restTemplate.postForEntity(siteConfig.serviceUrl() + LOGIN_URL, requestHttpEntity, Boolean.class);
+        return restTemplate.postForEntity("http://localhost:8090/" + LOGIN_URL, requestHttpEntity, Boolean.class);
     }
 
 }

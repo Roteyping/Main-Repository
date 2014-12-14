@@ -1,15 +1,15 @@
-package roteyping.service.model;
+package myhh.service.model;
 
 public class AuthenticateRequest {
-    private String emailAddress;
+    private String email;
     private String password;
 
-    public String getEmailAddress() {
-        return emailAddress;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

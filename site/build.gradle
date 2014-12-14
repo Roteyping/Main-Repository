@@ -75,5 +75,5 @@ task run(dependsOn: [war], type: Exec) {
 }
 
 task runDebug(dependsOn: [war], type: Exec) {
-    commandLine "java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingsite.war", "-TomcatPort", "9080"
+    commandLine "java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5025", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingsite.war", "-TomcatPort", "9080"
 }

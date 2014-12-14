@@ -1,4 +1,4 @@
-package roteyping.site.model;
+package myhh.site.model;
 
 public class LoginRequest {
     private String email;

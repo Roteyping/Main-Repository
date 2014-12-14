@@ -1,4 +1,4 @@
-package roteyping.site.config;
+package myhh.site.config;
 
 import org.springframework.core.env.Environment;
 

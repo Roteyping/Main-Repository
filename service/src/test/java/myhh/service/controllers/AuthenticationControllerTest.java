@@ -1,4 +1,4 @@
-package roteyping.service.controllers;
+package myhh.service.controllers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,8 +6,8 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import roteyping.service.model.AuthenticateRequest;
-import roteyping.service.repositories.AuthenticationRepository;
+import myhh.service.model.AuthenticateRequest;
+import myhh.service.repositories.AuthenticationRepository;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -51,7 +51,7 @@ public class AuthenticationControllerTest {
 
     private AuthenticateRequest buildRequest(String email, String password){
         AuthenticateRequest authenticateRequest = new AuthenticateRequest();
-        authenticateRequest.setEmailAddress(email);
+        authenticateRequest.setEmail(email);
         authenticateRequest.setPassword(password);
         return authenticateRequest;
     }

@@ -1,4 +1,4 @@
-package roteyping.service.controllers;
+package myhh.service.controllers;
 
 import com.google.common.base.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import roteyping.service.model.AuthenticateRequest;
-import roteyping.service.repositories.AuthenticationRepository;
+import myhh.service.model.AuthenticateRequest;
+import myhh.service.repositories.AuthenticationRepository;
 
 @Controller
 public class AuthenticationController {
@@ -22,10 +22,10 @@ public class AuthenticationController {
     }
     @RequestMapping(value="/authenticate", method = RequestMethod.POST, consumes = "application/json")
     public ResponseEntity<Boolean> authenticateRequest(@RequestBody AuthenticateRequest request) {
-        if(Strings.isNullOrEmpty(request.getEmailAddress()) || Strings.isNullOrEmpty(request.getPassword())){
+        if(Strings.isNullOrEmpty(request.getEmail()) || Strings.isNullOrEmpty(request.getPassword())){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        if(authenticationRepository.exists(request.getEmailAddress(), request.getPassword())){
+        if(authenticationRepository.exists(request.getEmail(), request.getPassword())){
             return new ResponseEntity<>(true, HttpStatus.OK);
         }
         return new ResponseEntity<>(false, HttpStatus.OK);

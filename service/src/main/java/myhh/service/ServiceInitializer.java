@@ -1,4 +1,4 @@
-package roteyping.site;
+package myhh.service;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
@@ -9,12 +9,12 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-public class SiteInitializer implements WebApplicationInitializer {
+public class ServiceInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
 
-        context.register(SiteSpringMVCConfig.class);
+        context.register(ServiceSpringMVCConfig.class);
 
         servletContext.addListener(new ContextLoaderListener(context));
 
