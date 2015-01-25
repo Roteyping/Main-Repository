@@ -13,7 +13,7 @@ configurations {
 }
 
 ext {
-    springVersion="3.2.2.RELEASE"
+    springVersion="4.1.4.RELEASE"
     tomcatVersion = '7.0.52'
     release = "${System.env.BUILD_VCS_NUMBER ?: 0}"
 }

@@ -40,7 +40,7 @@ public class LoginController {
         request.setEmail(email);
         request.setPassword(password);
 
-        HttpEntity<LoginRequest> requestHttpEntity = new HttpEntity<>(request, headers);
+        HttpEntity<LoginRequest> requestHttpEntity = new HttpEntity<LoginRequest>(request, headers);
 
         return restTemplate.postForEntity("http://localhost:8090/" + LOGIN_URL, requestHttpEntity, Boolean.class);
     }

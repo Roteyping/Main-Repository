@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -28,14 +27,6 @@ import static com.google.common.collect.Lists.newArrayList;
 public class SiteSpringMVCConfig extends WebMvcConfigurerAdapter {
     @Autowired
     Environment environment;
-
-    @Bean
-    public MappingJacksonHttpMessageConverter mappingJacksonHttpMessageConverter() {
-        MappingJacksonHttpMessageConverter mappingJacksonHttpMessageConverter = new MappingJacksonHttpMessageConverter();
-        mappingJacksonHttpMessageConverter.setPrefixJson(false);
-        mappingJacksonHttpMessageConverter.setSupportedMediaTypes(newArrayList(MediaType.APPLICATION_JSON));
-        return mappingJacksonHttpMessageConverter;
-    }
 
     @Bean
     public SiteConfig siteConfig(){
