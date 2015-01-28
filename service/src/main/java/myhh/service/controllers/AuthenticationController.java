@@ -20,6 +20,7 @@ public class AuthenticationController {
     public AuthenticationController(AuthenticationRepository authenticationRepository){
         this.authenticationRepository = authenticationRepository;
     }
+
     @RequestMapping(value="/authenticate", method = RequestMethod.POST, consumes = "application/json")
     public ResponseEntity<Boolean> authenticateRequest(@RequestBody AuthenticateRequest request) {
         if(Strings.isNullOrEmpty(request.getEmail()) || Strings.isNullOrEmpty(request.getPassword())){
