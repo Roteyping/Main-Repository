@@ -8,4 +8,14 @@ roteyping.controller('loginController', ['$scope','loginService', function($scop
         }, function(data){
         })
     }
+
+    var validationApp = angular.module('validateApp', []);
+
+    validationApp.controller ('main-controller', function($scope) {
+        if (isValid) {
+            alert("Login is successful");
+        }
+    });
 }]);
+
+

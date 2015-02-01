@@ -12,23 +12,23 @@
             <img src="../../images/orange_red_hat_mainlogo.jpg">
         </div>
         <div class="login-form">
-            <form class="login" method="post" name="loginForm">
+            <form class="login" method="post" name="loginForm" ng-controller="loginController">
                 <div class="email-label">
                     <label>E-mail</label>
                 </div>
                 <div class="email-input">
-                    <input class="input-box" name="email" maxlength="75" value="" type="text">
+                    <input class="input-box" name="email" maxlength="75" value="" type="text" placeholder="yourname@email.com" required>
                 </div>
                 <div class="password-label">
                     <label>Password</label>
                 </div>
                 <div class="password-input">
-                    <input class="input-box" name="password" maxlength="50" autocomplete="off" type="password">
+                    <input class="input-box" name="password" maxlength="50" autocomplete="off" type="password" placeholder="Password" required>
                 </div>
                 <div class="remember-me-label">
                     <input type="checkbox" name="remember">
                     <label>Remember Me</label>
-                    <input class="sign-in-button" type="button" type="submit" value="Sign In"> 
+                    <input class="sign-in-button" type="button" type="submit" value="Sign In">
                 </div>
 
                 <hr class = "hr">

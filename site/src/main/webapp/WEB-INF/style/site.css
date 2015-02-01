@@ -85,34 +85,9 @@ body {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.input:required {
+    border: 1px solid red;
+}
 
 .small-12 {
     width: 100%;
