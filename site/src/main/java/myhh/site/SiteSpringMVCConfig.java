@@ -63,8 +63,9 @@ public class SiteSpringMVCConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/scripts/**").addResourceLocations("/WEB-INF/scripts/**");
-        registry.addResourceHandler("/style/**").addResourceLocations("/WEB-INF/style/**");
+        registry.addResourceHandler("/scripts/**").addResourceLocations("/WEB-INF/scripts/");
+        registry.addResourceHandler("/style/**").addResourceLocations("/WEB-INF/style/");
+        registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
     }
 
 }

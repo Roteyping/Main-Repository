@@ -2,14 +2,14 @@
 <html ng-app="myhh" xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <link href="../style/site.css" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/style/site.css}" rel="stylesheet" type="text/css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-resource.js"></script>
     </head>
 
     <body>
         <div style="padding:10px; margin: 5em 0 1em 0;" align="center">
-            <img src="../../images/orange_red_hat_mainlogo.jpg">
+            <img src="/images/orange_red_hat_mainlogo.jpg"/>
         </div>
         <div class="login-form">
             <form class="login" method="post" name="loginForm" ng-controller="loginController">
@@ -17,21 +17,21 @@
                     <label>E-mail</label>
                 </div>
                 <div class="email-input">
-                    <input class="input-box" name="email" maxlength="75" value="" type="text" placeholder="yourname@email.com" required>
+                    <input class="input-box" name="email" maxlength="75" value="" type="text" placeholder="yourname@email.com"/>
                 </div>
                 <div class="password-label">
                     <label>Password</label>
                 </div>
                 <div class="password-input">
-                    <input class="input-box" name="password" maxlength="50" autocomplete="off" type="password" placeholder="Password" required>
+                    <input class="input-box" name="password" maxlength="50" autocomplete="off" type="password" placeholder="Password"/>
                 </div>
                 <div class="remember-me-label">
-                    <input type="checkbox" name="remember">
+                    <input type="checkbox" name="remember"/>
                     <label>Remember Me</label>
-                    <input class="sign-in-button" type="button" type="submit" value="Sign In">
+                    <input class="sign-in-button" type="submit" value="Sign In"/>
                 </div>
 
-                <hr class = "hr">
+                <hr class = "hr"></hr>
 
                 <div>
                     <a class="forget-password" href="#">Forget Your Password?</a>
