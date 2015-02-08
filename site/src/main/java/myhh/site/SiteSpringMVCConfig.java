@@ -1,12 +1,12 @@
 package myhh.site;
 
 
+import myhh.site.config.SiteConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -17,9 +17,6 @@ import org.thymeleaf.spring3.SpringTemplateEngine;
 import org.thymeleaf.spring3.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
-import myhh.site.config.SiteConfig;
-
-import static com.google.common.collect.Lists.newArrayList;
 
 @Configuration
 @EnableWebMvc
@@ -66,6 +63,7 @@ public class SiteSpringMVCConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/scripts/**").addResourceLocations("/WEB-INF/scripts/");
         registry.addResourceHandler("/style/**").addResourceLocations("/WEB-INF/style/");
         registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
+        registry.addResourceHandler("/static/partials/**").addResourceLocations("/WEB-INF/pages/partials/");
     }
 
 }

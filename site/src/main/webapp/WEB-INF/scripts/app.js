@@ -1,10 +1,12 @@
-var roteyping = angular.module('roteyping',['ngResource']);
+var myhh = angular.module('myhh', ['ngResource', 'ngRoute']);
 
-roteyping.factory('loginService', ['$resource', function ($resource){
-     return $resource('/login', {}, {
-        login: {
-
-        }
-     });
+myhh.config(['$routeProvider', function($routeProvider){
+    $routeProvider
+    .when('/lesson-plans', {templateUrl: '/static/partials/lesson-plans.html', controller: 'lessonPlanController'})
+    .when('/home', {templateUrl: '/static/partials/home.html'})
+    .when('/', {templateUrl: '/static/partials/home.html'})
+    .otherwise({redirectTo: '/'});
 }]);
+
+
 
