@@ -42,7 +42,7 @@ public class LoginController {
 
         HttpEntity<LoginRequest> requestHttpEntity = new HttpEntity<LoginRequest>(request, headers);
 
-        return restTemplate.postForEntity("http://localhost:8090/" + LOGIN_URL, requestHttpEntity, Boolean.class);
+        return restTemplate.postForEntity(siteConfig.serviceUrl() + LOGIN_URL, requestHttpEntity, Boolean.class);
     }
 
 }

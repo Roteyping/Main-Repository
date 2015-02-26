@@ -3,9 +3,11 @@ package myhh.site;
 
 import myhh.site.config.SiteConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ViewResolver;
@@ -19,9 +21,11 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 @Configuration
+@PropertySource("classpath:site.properties")
 @EnableWebMvc
 @ComponentScan("myhh.site")
 public class SiteSpringMVCConfig extends WebMvcConfigurerAdapter {
+
     @Autowired
     Environment environment;
 
