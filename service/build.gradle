@@ -69,10 +69,14 @@ war {
     manifest { attributes('Main-Class': 'launch.Launcher') }
 }
 
-task run(dependsOn: [war], type: Exec) {
+task cleanFolder(type: Delete){
+    delete 'tomcat'
+}
+
+task run(dependsOn: ["cleanFolder", war], type: Exec) {
     commandLine "java", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingservice.war", "-TomcatPort", "8090"
 }
 
-task runDebug(dependsOn: [war], type: Exec) {
+task runDebug(dependsOn: ["cleanFolder", war], type: Exec) {
     commandLine "java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005", "-XX:+CMSClassUnloadingEnabled", "-Xmx1G", "-XX:MaxPermSize=512m", "-jar", "./build/libs/roteypingservice.war", "-TomcatPort", "8090"
 }
