@@ -15,6 +15,10 @@ public class LessonPlansController {
     @RequestMapping(value= "/lesson-plans", produces="application/json")
     @ResponseBody
     public List<Map<String, String>> getLessonPlans() {
-        return ImmutableList.<Map<String, String>>builder().add(of("title", "First Lesson")).add(of("title", "Second Lesson")).build();
+        return ImmutableList.<Map<String, String>>builder()
+                .add(of("title", "First Lesson"))
+                .add(of("title", "Second Lesson"))
+                .add(of("title", "Third Lesson"))
+                .build();
     }
 }
