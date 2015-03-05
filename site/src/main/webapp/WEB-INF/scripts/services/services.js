@@ -9,3 +9,11 @@ myhh.factory('loginService', ['$resource', function ($resource){
         }
      });
 }]);
+
+myhh.factory('signUpService', ['$resource', function ($resource){
+     return $resource('/signup', {}, {
+        signup: {
+              method : 'POST'
+        }
+     });
+}]);
