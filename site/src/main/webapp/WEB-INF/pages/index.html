@@ -2,17 +2,24 @@
 <html ng-app="myhh" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link th:href="@{/style/homepage.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/style/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/style/bootstrap-theme.min.css}" rel="stylesheet" type="text/css"/>
+
+    <!--<link th:href="@{/style/homepage.css}" rel="stylesheet" type="text/css"/>-->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
     <script th:src="@{/scripts/app.js}"></script>
+    <script th:src="@{/scripts/js/bootstrap.js}"></script>
+    <script th:src="@{/scripts/js/bootstrap.min.js}"></script>
+    <script th:src="@{/scripts/js/npm.js}"></script>
+
     <script th:src="@{/scripts/services/services.js}"></script>
     <script th:src="@{/scripts/controllers/lesson-plan-controller.js}"></script>
 </head>
 
 <body>
-<div id="page">
+<div id="page" class="container">
     <div id="logo">
         <img src="../images/orange_red_hat_mainlogo.jpg" />
         <h1><a href="/" id="logoLink">My Orange Hard Hat</a></h1>
