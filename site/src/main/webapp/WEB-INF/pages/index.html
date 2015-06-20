@@ -3,9 +3,8 @@
 
 <head>
     <link th:href="@{/style/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
-    <link th:href="@{/style/bootstrap-theme.min.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/style/bootswatch.min.css}" rel="stylesheet" type="text/css"/>
 
-    <!--<link th:href="@{/style/homepage.css}" rel="stylesheet" type="text/css"/>-->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-resource.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
@@ -19,35 +18,93 @@
 </head>
 
 <body>
-<div id="page" class="container">
-    <div id="logo">
-        <img src="../images/orange_red_hat_mainlogo.jpg" />
-        <h1><a href="/" id="logoLink">My Orange Hard Hat</a></h1>
-    </div>
-    <div class="welcome-control">
-        <a href="/login">Login</a>
-    </div>
-    <div id="nav">
-        <ul>
-            <li><a href="/#/home">HOME</a></li>
-            <li><a href="/#/lesson-plans">LESSON PLANS</a></li>
+<div class="container">
 
-        </ul>
-    </div>
-    <div id="content">
-        <div ng-view="" id="ng-view"></div>
-    </div>
-    <div id="footer">
-        <p>
-        <div>
-            <ul>
-                <li><a href="#/contact-us">Contact Us</a></li>
-                <li><a href="#/about-us">About Us</a></li>
-                <li><label>&copy; 2015 My Orange Hard Hat Inc. All rights reserved.</label></li>
-            </ul>
-        </div>
-        </p>
-    </div>
+    <!-- The justified navigation menu is meant for single line per list item.
+         Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead">
+        <h3 class="text-muted">My Orange Hard Hat</h3>
+        <img src="../images/myorangehardhatlogo.png" />
+<div class="bs-component">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 </div>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1>Prepare your kids for the future!</h1>
+        <p class="lead">Technology is solving a lot of current issues and it will continue doing so in the future.
+            We are continuously working to make technology easier for the kids to understand. We are preparing kids
+            to solve the problems while learning those tools.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Register Now</a></p>
+    </div>
+
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>Build a LED Forest</h2>
+            <p>Teach your kid how to make a simple LED circuit and light up green LEDs and trigger their imagination on
+            creating a greener tomorrow all the while building a LED forest</p>
+            <a class="btn btn-primary" href="#" role="button">View details &raquo;</a>
+        </div>
+        <div class="col-lg-4">
+            <h2>Customize your orange hard hat</h2>
+            <p>Jump into the world of wearable electronics while customizing your own hat</p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <h2>Firewalker Junior</h2>
+            <p>Make a mark with your shoes and make it shine</p>
+            <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+        </div>
+    </div>
+
+    <!-- Site footer -->
+    <footer class="footer">
+        <p><label>&copy; 2015 My Orange Hard Hat Inc. All rights reserved.</label></p>
+    </footer>
+
+</div> <!-- /container -->
+<!--<div id="page" class="container">-->
+    <!--<div id="logo">-->
+        <!--<img src="../images/myorangehardhatlogo.png" />-->
+        <!--<h1><a href="/" id="logoLink">My Orange Hard Hat</a></h1>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div id="nav">&ndash;&gt;-->
+        <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<li><a href="/#/home">HOME</a></li>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<li><a href="/#/lesson-plans">LESSON PLANS</a></li>&ndash;&gt;&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div id="content">-->
+        <!--<div ng-view="" id="ng-view"></div>-->
+    <!--</div>-->
+    <!--<div id="footer">-->
+        <!--<p>-->
+        <!--<div>-->
+            <!--<ul>-->
+                <!--<li><a href="#/contact-us">Contact Us</a></li>-->
+                <!--<li><a href="#/about-us">About Us</a></li>-->
+                <!--<li><label>&copy; 2015 My Orange Hard Hat Inc. All rights reserved.</label></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--</p>-->
+    <!--</div>-->
+<!--</div>-->
 </body>
 </html>
