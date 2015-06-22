@@ -1,0 +1,25 @@
+<form class="container" method="post" name="loginForm" ng-controller="loginController" ng-submit="signIn()">
+    <div class="email-label">
+        <label>E-mail</label>
+    </div>
+    <div class="email">
+        <input class="input-box" name="email" maxlength="75" value="" type="text" placeholder="yourname@email.com"/>
+    </div>
+    <div class="password-label">
+        <label>Password</label>
+    </div>
+    <div class="">
+        <input class="password" name="password" maxlength="50" autocomplete="off" type="password"
+               placeholder="Password"/>
+    </div>
+    <div class="remember-me-label">
+        <input type="checkbox" name="remember"/>
+        <label>Remember Me</label>
+        <input class="sign-in-button" type="submit" value="Sign In"/>
+    </div>
+
+    <div>
+        <a class="forget-password" href="#/forgot-password">Forgot Your Password?</a>
+        <a class="create-account" href="#/sign-up">Create an Account</a>
+    </div>
+</form>

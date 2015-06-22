@@ -15,69 +15,37 @@
 
     <script th:src="@{/scripts/services/services.js}"></script>
     <script th:src="@{/scripts/controllers/lesson-plan-controller.js}"></script>
+    <script th:src="@{/scripts/controllers/login-controller.js}"></script>
 </head>
 
 <body>
 <div class="container">
-
-    <!-- The justified navigation menu is meant for single line per list item.
-         Multiple lines will require custom code not provided by Bootstrap. -->
     <div class="masthead">
         <h3 class="text-muted">My Orange Hard Hat</h3>
-        <img src="../images/myorangehardhatlogo.png" />
-<div class="bs-component">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#/lesson-plans">Courses</a></li>
-                        <li><a href="#/contact-us">Contact Us</a></li>
-                        <li><a href="#/about-us">About Us</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/login">Login</a></li>
-                    </ul>
+        <img th:src="@{/images/myorangehardhatlogo.png}"/>
+        <div class="bs-component">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#/lesson-plans">Courses</a></li>
+                            <li><a href="#/contact-us">Contact Us</a></li>
+                            <li><a href="#/about-us">About Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#/login">Login</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-</div>
+            </nav>
+        </div>
     </div>
     <div ng-view="" id="ng-view"></div>
-
-
     <!-- Site footer -->
     <footer class="footer">
         <p><label>&copy; 2015 My Orange Hard Hat Inc. All rights reserved.</label></p>
     </footer>
-
-</div> <!-- /container -->
-<!--<div id="page" class="container">-->
-    <!--<div id="logo">-->
-        <!--<img src="../images/myorangehardhatlogo.png" />-->
-        <!--<h1><a href="/" id="logoLink">My Orange Hard Hat</a></h1>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<div id="nav">&ndash;&gt;-->
-        <!--&lt;!&ndash;<ul>&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;<li><a href="/#/home">HOME</a></li>&ndash;&gt;&ndash;&gt;-->
-            <!--&lt;!&ndash;&lt;!&ndash;<li><a href="/#/lesson-plans">LESSON PLANS</a></li>&ndash;&gt;&ndash;&gt;-->
-
-        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--<div id="content">-->
-        <!--<div ng-view="" id="ng-view"></div>-->
-    <!--</div>-->
-    <!--<div id="footer">-->
-        <!--<p>-->
-        <!--<div>-->
-            <!--<ul>-->
-                <!--<li><a href="#/contact-us">Contact Us</a></li>-->
-                <!--<li><a href="#/about-us">About Us</a></li>-->
-                <!--<li><label>&copy; 2015 My Orange Hard Hat Inc. All rights reserved.</label></li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--</p>-->
-    <!--</div>-->
-<!--</div>-->
+</div>
 </body>
 </html>

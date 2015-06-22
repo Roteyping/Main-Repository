@@ -27,11 +27,6 @@ public class LoginController {
         this.siteConfig = siteConfig;
     }
 
-    @RequestMapping(value="/login", method= RequestMethod.GET)
-    public ModelAndView login() {
-        return new ModelAndView("login");
-    }
-
     @RequestMapping(value="/login", method = RequestMethod.POST)
     public ResponseEntity<Boolean> postForlogin(String email, String password) {
         HttpHeaders headers = new HttpHeaders();
